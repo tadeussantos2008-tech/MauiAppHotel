@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.ConfirmacaoPage"
+             Title="Confirmação">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
+
+            <!-- Ícone de sucesso -->
+            <Label Text="✔"
+                   FontSize="52"
+                   HorizontalOptions="Center"
+                   TextColor="#34A853" />
+
+            <Label Text="Reserva Confirmada!"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#1A73E8" />
+
+            <!-- Card com detalhes -->
+            <Border Stroke="#E0E0E0"
+                    StrokeThickness="1"
+                    BackgroundColor="#F8F9FA"
+                    Padding="16"
+                    Margin="0,8,0,0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Detalhes da Reserva"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#333" />
+
+                    <BoxView HeightRequest="1" Color="#E0E0E0" />
+
+                    <Grid ColumnDefinitions="*,*" RowSpacing="8">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Hóspede:" TextColor="#666" FontSize="13"/>
+                        <Label Grid.Row="0" Grid.Column="1" x:Name="lbl_nome" FontAttributes="Bold" FontSize="13"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Check-in:" TextColor="#666" FontSize="13"/>
+                        <Label Grid.Row="1" Grid.Column="1" x:Name="lbl_checkin" FontAttributes="Bold" FontSize="13"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Check-out:" TextColor="#666" FontSize="13"/>
+                        <Label Grid.Row="2" Grid.Column="1" x:Name="lbl_checkout" FontAttributes="Bold" FontSize="13"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Quarto:" TextColor="#666" FontSize="13"/>
+                        <Label Grid.Row="3" Grid.Column="1" x:Name="lbl_quarto" FontAttributes="Bold" FontSize="13"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Text="Hóspedes:" TextColor="#666" FontSize="13"/>
+                        <Label Grid.Row="4" Grid.Column="1" x:Name="lbl_hospedes" FontAttributes="Bold" FontSize="13"/>
+
+                        <Label Grid.Row="5" Grid.Column="0" Text="Diárias:" TextColor="#666" FontSize="13"/>
+                        <Label Grid.Row="5" Grid.Column="1" x:Name="lbl_diarias" FontAttributes="Bold" FontSize="13" TextColor="#1A73E8"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botão voltar -->
+            <Button Text="Fazer Nova Reserva"
+                    Clicked="Button_Voltar_Clicked"
+                    BackgroundColor="#1A73E8"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Margin="0,10,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

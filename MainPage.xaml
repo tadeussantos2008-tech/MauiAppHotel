@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.MainPage"
+             Title="App Hotel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Imagem de destaque do hotel -->
+            <Image Source="hotel.png"
+                   HeightRequest="180"
+                   Aspect="AspectFill"
+                   HorizontalOptions="Fill" />
+
+            <!-- Título -->
+            <Label Text="Faça sua Reserva"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#1A73E8" />
+
+            <!-- Nome do hóspede -->
+            <Label Text="Nome do Hóspede:" FontSize="14" />
+            <Entry x:Name="txt_nome"
+                   Placeholder="Digite seu nome completo" />
+
+            <!-- Data de Check-in -->
+            <Label Text="Data de Check-in:" FontSize="14" />
+            <DatePicker x:Name="dp_checkin"
+                        Format="dd/MM/yyyy"
+                        MinimumDate="01/01/2024" />
+
+            <!-- Data de Check-out -->
+            <Label Text="Data de Check-out:" FontSize="14" />
+            <DatePicker x:Name="dp_checkout"
+                        Format="dd/MM/yyyy"
+                        MinimumDate="01/01/2024" />
+
+            <!-- Tipo de quarto -->
+            <Label Text="Tipo de Quarto:" FontSize="14" />
+            <Picker x:Name="pk_quarto"
+                    Title="Selecione o tipo de quarto">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Solteiro</x:String>
+                        <x:String>Casal</x:String>
+                        <x:String>Luxo</x:String>
+                        <x:String>Suíte Master</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Número de hóspedes -->
+            <Label Text="Número de Hóspedes:" FontSize="14" />
+            <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                <Stepper x:Name="stp_hospedes"
+                         Minimum="1"
+                         Maximum="6"
+                         Increment="1"
+                         Value="1"
+                         ValueChanged="OnStepperValueChanged" />
+                <Label x:Name="lbl_hospedes"
+                       Text="1 hóspede"
+                       FontSize="14"
+                       VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- Botão Reservar -->
+            <Button Text="Confirmar Reserva"
+                    Clicked="Button_Reservar_Clicked"
+                    BackgroundColor="#1A73E8"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Margin="0,10,0,0" />
+
+            <!-- Botão Sobre -->
+            <Button Text="Sobre o App"
+                    Clicked="Button_Sobre_Clicked"
+                    BackgroundColor="Transparent"
+                    TextColor="#1A73E8"
+                    BorderColor="#1A73E8"
+                    BorderWidth="1"
+                    CornerRadius="8" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
